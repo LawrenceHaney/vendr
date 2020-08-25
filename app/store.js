@@ -1,9 +1,8 @@
-import Value from "./Models/Value.js";
+import Money from "./Models/Money.js";
 
 let _state = {
-  activeValue: new Value({ title: "Value" }),
-  /** @type {Value[]} */
-  values: []
+  moneyQuarter: new Money("quarter", "http://placehold.it/100x100", .25),
+  moneyDollar: new Money("dollar", "http://placehold.it/200x100", 1)
 };
 
 class Store {
