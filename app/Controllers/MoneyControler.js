@@ -29,7 +29,13 @@ export default class MoneyController {
   }
 
   pend(name, value){
+    console.log("hi")
     MoneyService.pend(name, value)
+    _drawUser
+  }
+
+  purchase(){
+    MoneyService.purchase()
     _drawUser
   }
 }

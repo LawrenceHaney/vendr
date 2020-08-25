@@ -2,6 +2,15 @@ import STORE from "../store.js";
 
 //Public
 class MoneyService {
+  purchase() {
+    if(STORE.State.defultUser.total <= STORE.State.defultUser.purchase)
+    {STORE.State.defultUser.purchase -= STORE.State.defultUser.total
+    STORE.State.defultUser.total == 0
+    STORE.State.defultUser.invantory.splice(0, STORE.State.defultUser.invantory.length)
+    console.log(STORE.State.defultUser)
+    }else{console.log("I can't let you do that Dave")}
+    ;
+  }
   insert(value){
     let user = STORE.State.defultUser
     if (user.wallet > value){
@@ -12,11 +21,13 @@ class MoneyService {
   pend(name, value){
     let user = STORE.State.defultUser
     let target= value
-    if(user.purchase >= target)
-      STORE.State.defultUser.invantory.push(name)
-      STORE.State.defultUser.total -= value
-  }
-
+    let tname= name
+    if(user.purchase >= target){
+      STORE.State.defultUser.invantory.push(tname)
+      STORE.State.defultUser.total += value
+      console.log(STORE.State.defultUser)
+    }
+  } 
 }
 
 const SERVICE = new MoneyService();
