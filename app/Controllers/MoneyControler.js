@@ -9,17 +9,27 @@ function _drawMoney(){
   templateholder += dollar.Template
   document.getElementById("money").innerHTML = templateholder
 }
-
-
+function _drawUser(){
+  document.getElementById("user").innerHTML = STORE.State.defultUser.Template
+}
+function _drawItems(){
+  document.getElementById("vend").innerHTML = STORE.State.defultItem.Template
+}
 //Public
 export default class MoneyController {
   constructor() {
     _drawMoney()
+    _drawUser()
+    _drawItems()
   }
 
-  insert() {
-    console.log("ok form mc")
-    MoneyService.insert()
-    _drawMoney()
+  insert(value) {
+    MoneyService.insert(value)
+    _drawUser()
+  }
+
+  pend(name, value){
+    MoneyService.pend(name, value)
+    _drawUser
   }
 }
