@@ -12,9 +12,11 @@ export default class User {
         <p class="col-12">you have ${this.wallet} </p>
         <p class="col-12">you've put in ${this.purchase}</p>
         `
-        this.invantory.forEach(e => {
-            usertemplate += `<p>"${this.invantory[e]}"</p>`
+        let arr= this.invantory
+        for (let e =0; e < arr.length; e++){
+            usertemplate += `<p class="col-1>"${this.invantory[e]}"</p>`
+        }
             
-        });
+        
         return usertemplate }
 }
